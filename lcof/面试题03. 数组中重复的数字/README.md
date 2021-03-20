@@ -61,6 +61,18 @@ class Solution {
         nums[i] = nums[j];
         nums[j] = t;
     }
+    
+    public static Map<Integer, Integer> findRepeatNumber1(int[] nums) {
+		Map<Integer, Integer> map = new HashMap<>();
+        for (int num: nums) {
+            if(map.containsKey(num)) {
+            	map.put(num, map.get(num)+1);
+            } else {
+            	map.put(num, 1);
+            }
+        }
+        return map;
+    }
 }
 ```
 
